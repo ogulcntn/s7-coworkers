@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const team = [
   { fullName: "John Doe", email: "john.doe@somewhere.com", notes: "" },
@@ -13,6 +14,9 @@ const team = [
 function App() {
   const [members, setMembers] = useState(team);
 
+  function handleAddMember(newMember) {
+    setMembers([...members, newMember]);
+  }
   return (
     <div className="main-container">
       <div className="mid-container">
