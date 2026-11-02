@@ -1,5 +1,5 @@
 {
-  "stats": "6 passed, 4 failed out of 10",
+  "stats": "10 passed, 0 failed out of 10",
   "tests": [
     {
       "name": "reactstrap ve bootstrap paketleri kurulmuş mu?",
@@ -23,19 +23,19 @@
     },
     {
       "name": "NewMemberForm formu submit edildiğinde addMember doğru veriyle çağrılıyor ve axios doğru adrese istek atıyor mu?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "Kullanıcı başarılı response sonrası state'e ekleniyor mu?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "Form submit sonrası başarılı response ile form sıfırlanıyor mu?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "CoworkerList.jsx componentı oluşturulmuş mu?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "CoworkerList render edildiğinde Coworker bileşenlerini gösteriyor mu?",

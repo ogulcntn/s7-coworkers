@@ -8,19 +8,30 @@ const initialForm = {
   notes: "",
 };
 
-export default function NewMemberForm(addMember) {
+export default function NewMemberForm({ addMember }) {
   const [formData, setFormData] = useState(initialForm);
 
   function handleChange(event) {
     const { name, value } = event.target;
     setFormData({
-      ...setFormData,
+      ...formData,
       [name]: value,
     });
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    axios
+      .post("https://jsonplaceholder.typicode.com/posts", formData)
+      .then((response) => {
+        addMember(response.data);
+        setFormData(initialForm);
+      })
+      .catch((error) => console.log(error));
+  }
+
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <FormGroup>
         <label htmlFor="fullName">Ad Soyad</label>
         <input
@@ -34,7 +45,7 @@ export default function NewMemberForm(addMember) {
       <FormGroup>
         <label htmlFor="email">Email</label>
         <input
-          type="text"
+          type="email"
           id="email"
           name="email"
           value={formData.email}
@@ -51,7 +62,7 @@ export default function NewMemberForm(addMember) {
           onChange={handleChange}
         />
       </FormGroup>
-      <Button>Kaydet</Button>
+      <Button type="submit">Kaydet</Button>
     </Form>
   );
 }
