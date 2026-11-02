@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import NewMemberForm from "./components/NewMemberForm";
 
 const team = [
   { fullName: "John Doe", email: "john.doe@somewhere.com", notes: "" },
@@ -26,7 +27,7 @@ function App() {
             NewMemberForm componentı aşağıdaki gibi kullanılmalı.
             Gerekli dosyayı oluşturup kodları yazdıktan sonra alttaki satırı yorumdan çıkar.
           */}
-          {/* <NewMemberForm addMember={handleAddMember} /> */}
+          <NewMemberForm addMember={handleAddMember} />
         </div>
         <div className="list-container">
           <h2>Takım arkadaşların</h2>
